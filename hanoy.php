@@ -8,7 +8,7 @@ if (isset($_POST['from']) && isset($_POST['to']) && isset($_COOKIE['PHPSESSID'])
 	$timer = $_POST['timer'];
 
 	// лучше конечно в БД, а то файл открыл, записал, закрыл.. Затратно.
-	$f = fopen('game-'.$_COOKIE['PHPSESSID'].'.txt', 'a+');
+	$f = fopen('games/game-'.$_COOKIE['PHPSESSID'].'.txt', 'a+');
 	if ($counter == 1){
 		fwrite($f, PHP_EOL."/======== NEW Game, ID: ".time()." ==========/");	
 	}
