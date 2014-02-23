@@ -28,7 +28,7 @@
 						<div class="stick"></div>
 
 						<table class="column-wrapper">
-							<tbody data-type="column">
+							<tbody data-type="column" data-num="1">
 							</tbody>
 						</table>
 						<!-- <div class="circles-container"></div> -->
@@ -37,7 +37,7 @@
 						<div class="stick"></div>
 
 						<table class="column-wrapper">
-							<tbody data-type="column">
+							<tbody data-type="column" data-num="2">
 							</tbody>
 						</table>
 						<!-- <div class="circles-container"></div> -->
@@ -46,10 +46,17 @@
 						<div class="stick"></div>
 
 						<table class="column-wrapper">
-							<tbody data-type="column">
+							<tbody data-type="column" data-num="3">
 							</tbody>
 						</table>
 						<!-- <div class="circles-container" data-type="column"></div> -->
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div class="well">
+							Счетчик шагов: <span data-type="counter">0</span>
+						</div>
 					</td>
 				</tr>
 				<tr>
