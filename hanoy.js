@@ -3,6 +3,7 @@ var Hanoy = function(el, cnt){
 		block_selector			= '[data-type="block"]',
 		columns					= el.find(columns_selector),
 		tower_h					= el.find('[data-type="tower"]').height(),
+		victory_el				= el.find('[data-type="victory"]'),
 		counter_el				= el.find('[data-type="counter"]'),
 		counter					= 0,
 		timer_el				= el.find('[data-type="timer"]'),
@@ -14,10 +15,12 @@ var Hanoy = function(el, cnt){
 		count					= cnt;
 
 	var init = function(){
-		// обнулим счетчик
+		generate_blocks(3);
+		// обнулим счетчики, таймеры
 		counter_el.text(counter);
 		timer_el.text(timer);
 		clearInterval(timer_interval);
+		victory_el.hide();
 
 		columns.sortable({
 			connectWith: columns_selector,
@@ -25,7 +28,8 @@ var Hanoy = function(el, cnt){
 			start: function( event, ui ){
 				// сохраним откуда тащим
 				from =  ui.item.parent().data("num");
-				if (timer_interval == 0) timer_interval = setInterval(start_timer,1000);
+				// запустим таймер игры, как только взяли первый блок
+				if (timer_interval === 0) timer_interval = setInterval(start_timer,1000);
 			},
 			beforeStop: function( event, ui ){
 				var blocks = ui.item.siblings().filter(block_selector);
@@ -53,21 +57,32 @@ var Hanoy = function(el, cnt){
 					// обновим счетчик
 					counter_el.text(++counter);
 					// запишем в файл
-					save(counter,from,to);
+					save(counter,from,to,timer);
+				}
+				// проверим на победу, если в одной башне все собрались - умница
+				var blocks_count = ui.item.siblings().filter(block_selector).length;
+				if ( blocks_count === count-1 ){
+					clearInterval(timer_interval);
+					// columns.sortable('disable');
+					victory_el.show();
+					// запишем в файл победу!!
+					save(counter,0,0,timer);
 				}
 			},
 		});
 	};
 
+	// таймер игры
 	var start_timer = function(){
 		timer_el.text(++timer);
 	};
 
+	// сохраним в файл на сервере
 	var save = function(counter, from, to){
 		$.ajax({
 				url: 'hanoy.php',
 				type: 'post',
-				data: {'counter':counter, 'from': from, 'to': to},
+				data: {'counter':counter, 'from': from, 'to': to, 'timer': timer},
 				success: function (data) {
 					
 				}
@@ -75,6 +90,7 @@ var Hanoy = function(el, cnt){
 		// console.log(from+' -> '+to);
 	};
 
+	// генерируем нужное количество блоков
 	var generate_blocks = function(){
 		var delta				= (100 - min_width) / (count - 1),
 			block_h			= tower_h / count,
@@ -88,10 +104,12 @@ var Hanoy = function(el, cnt){
 
 		columns.html("<tr><td></td></tr>");
 
+		// начинаем с певой башни
 		columns.first().append(generated_blocks);
 		renew_sortable();
 	};
 
+	// нельзя двигать нижние блоки, только те, которые сверху
 	var renew_sortable = function(){
 		columns.each(function(i){
 			$(this).find(block_selector).data('sortable', false);
@@ -99,19 +117,18 @@ var Hanoy = function(el, cnt){
 		});
 	};
 
+	// после каждого хода нужно обновить состояние блоков
 	columns.on("sortstop", function( event, ui ){
 		renew_sortable();
 	});
 
-	generate_blocks(3);
 	init();
 };
-
-var hanoy = new Hanoy($('[data-type=Hanoy]'), 3);
-
 
 $('#hanoy-start').on('click',function(){
 	var crcl_cnt = $('#inputblocks-Count').val();
 
 	hanoy = new Hanoy($('[data-type=Hanoy]'), crcl_cnt);
 });
+
+$('#hanoy-start').trigger('click');

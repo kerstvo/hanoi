@@ -53,13 +53,13 @@
 					<td>
 						<div class="well">
 							<div>Счетчик шагов: <span data-type="counter">0</span></div>
-							<div>Таймер: <span data-type="timer">0</span></div>
+							<div>Таймер: <span data-type="timer">0</span> сек</div>
 						</div>
 					</td>
-				</tr>
-				<tr>
-					<td colspan="3">
-						<div class="container">
+					<td colspan="2">
+						<div class="alert alert-success victory" data-type="victory">
+							ВИКТОРИЯ!
+						</div>
 						<div class="row text-center">
 						<div class="form-group controls">
 							<label for="inputblocks-Count" class="col-xs-6 col-sm-4 control-label">Количество колец:</label>
@@ -79,49 +79,13 @@
 							</div>
 						</div>
 						</div>
-						</div>
+					</td>
+					<td>
+						
 					</td>
 				</tr>
 			</tbody>
 		</table>
-
-       	<!-- <div class="container" data-type="Hanoy">
-        	<div class="row">
-        		<div class="col-xs-4">
-        			<div class="column"></div>
-					<div class="blocks-container" data-type="column"></div>
-        		</div>
-        		<div class="col-xs-4">
-        			<div class="column"></div>
-					<div class="blocks-container" data-type="column"></div>
-        		</div>
-        		<div class="col-xs-4">
-        			<div class="column"></div>
-					<div class="blocks-container" data-type="column"></div>
-        		</div>
-        	</div>
-        	<div class="row">
-        		<div class="col-sm-6 col-sm-offset-3 text-center"> 
-					<div class="form-group controls">
-						<label for="inputblocks-Count" class="col-xs-4 control-label">Количество колец:</label>
-						<div class="col-xs-4">
-							<select name="blocks-count" id="inputblocks-Count" class="form-control text-center">
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-							</select>
-						</div>
-						<div class="col-xs-3">
-							<button type="button" class="btn btn-default btn-success" id="hanoy-start">Начать заново</button>
-						</div>
-					</div>
-        		</div>
-        	</div>
-        </div> -->
 
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

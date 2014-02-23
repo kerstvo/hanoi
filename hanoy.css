@@ -58,3 +58,7 @@
 .control-label{
 	line-height: 30px;
 }
+.victory{
+	text-align: center;
+	display: none;
+}
