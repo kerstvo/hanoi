@@ -10,7 +10,7 @@
 	padding: 10px 10px 0 10px !important;
 }
 
-/*.circles-container{
+/*.blocks-container{
 	border-bottom: 10px solid #333;
 	height: 300px;
 	border: 1px dashed green;
@@ -24,11 +24,11 @@
 	height: 100%;
 }
 
-.circle-wrapper{
+.block-wrapper{
 
 }
 
-.circle{
+.block{
 	height: 100%;
 	display: block;
 	border: 1px solid;

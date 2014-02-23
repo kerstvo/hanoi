@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -31,7 +31,6 @@
 							<tbody data-type="column" data-num="1">
 							</tbody>
 						</table>
-						<!-- <div class="circles-container"></div> -->
 					</td>
 					<td class="tower" data-type="tower">
 						<div class="stick"></div>
@@ -40,7 +39,6 @@
 							<tbody data-type="column" data-num="2">
 							</tbody>
 						</table>
-						<!-- <div class="circles-container"></div> -->
 					</td>
 					<td class="tower" data-type="tower">
 						<div class="stick"></div>
@@ -49,13 +47,13 @@
 							<tbody data-type="column" data-num="3">
 							</tbody>
 						</table>
-						<!-- <div class="circles-container" data-type="column"></div> -->
 					</td>
 				</tr>
 				<tr>
-					<td colspan="3">
+					<td>
 						<div class="well">
-							Счетчик шагов: <span data-type="counter">0</span>
+							<div>Счетчик шагов: <span data-type="counter">0</span></div>
+							<div>Таймер: <span data-type="timer">0</span></div>
 						</div>
 					</td>
 				</tr>
@@ -64,9 +62,9 @@
 						<div class="container">
 						<div class="row text-center">
 						<div class="form-group controls">
-							<label for="inputCircles-Count" class="col-xs-6 col-sm-4 control-label">Количество колец:</label>
+							<label for="inputblocks-Count" class="col-xs-6 col-sm-4 control-label">Количество колец:</label>
 							<div class="col-xs-6 col-sm-4">
-								<select name="circles-count" id="inputCircles-Count" class="form-control text-center">
+								<select name="blocks-count" id="inputblocks-Count" class="form-control text-center">
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option>
@@ -91,23 +89,23 @@
         	<div class="row">
         		<div class="col-xs-4">
         			<div class="column"></div>
-					<div class="circles-container" data-type="column"></div>
+					<div class="blocks-container" data-type="column"></div>
         		</div>
         		<div class="col-xs-4">
         			<div class="column"></div>
-					<div class="circles-container" data-type="column"></div>
+					<div class="blocks-container" data-type="column"></div>
         		</div>
         		<div class="col-xs-4">
         			<div class="column"></div>
-					<div class="circles-container" data-type="column"></div>
+					<div class="blocks-container" data-type="column"></div>
         		</div>
         	</div>
         	<div class="row">
         		<div class="col-sm-6 col-sm-offset-3 text-center"> 
 					<div class="form-group controls">
-						<label for="inputCircles-Count" class="col-xs-4 control-label">Количество колец:</label>
+						<label for="inputblocks-Count" class="col-xs-4 control-label">Количество колец:</label>
 						<div class="col-xs-4">
-							<select name="circles-count" id="inputCircles-Count" class="form-control text-center">
+							<select name="blocks-count" id="inputblocks-Count" class="form-control text-center">
 								<option value="3">3</option>
 								<option value="4">4</option>
 								<option value="5">5</option>
