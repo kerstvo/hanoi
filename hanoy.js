@@ -3,16 +3,25 @@ var Hanoy = function(el, cnt){
 		circle_selector			= '[data-type="circle"]',
 		columns					= el.find(columns_selector),
 		tower_h					= el.find('[data-type="tower"]').height(),
+		counter_el				= el.find('[data-type="counter"]'),
+		counter					= 0,
 		min_width				= 20,
+		from					= 0,
+		to						= 0,
 		count					= cnt;
 
 	var init = function(){
+		counter_el.text(counter);
 		columns.sortable({
 			connectWith: columns_selector,
 			items: '> [data-sortable]',
+			start: function( event, ui ){
+				// сохраним откуда тащим
+				from =  ui.item.parent().data("num");
+			},
 			beforeStop: function( event, ui ){
 				var circles = ui.item.siblings().filter(circle_selector);
-				// debugger;
+
 				if (ui.item.data('sortable') === false){
 					return false;
 				}
@@ -27,7 +36,26 @@ var Hanoy = function(el, cnt){
 					}
 				}
 			},
+			stop: function( event, ui ){
+				// сохраним куда тащим
+				to =  ui.item.parent().data("num");
+				// запишем в файл
+				save(from,to);
+				counter_el.text(++counter);
+			},
 		});
+	};
+
+	var save = function(from, to){
+		$.ajax({
+				url: 'hanoy.php',
+				type: 'post',
+				data: {'from': from, 'to': to},
+				success: function (data) {
+					
+				}
+			});
+		console.log(from+' -> '+to);
 	};
 
 	var generate_circles = function(){
