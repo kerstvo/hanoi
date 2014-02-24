@@ -1,4 +1,4 @@
-var Hanoy = function(el, cnt){
+var Hanoi = function(el, cnt){
 	var columns_selector		= '[data-type="column"]', 
 		block_selector			= '[data-type="block"]',
 		columns					= el.find(columns_selector),
@@ -80,7 +80,7 @@ var Hanoy = function(el, cnt){
 	// сохраним в файл на сервере
 	var save = function(counter, from, to){
 		$.ajax({
-				url: 'hanoy.php',
+				url: 'hanoi.php',
 				type: 'post',
 				data: {'counter':counter, 'from': from, 'to': to, 'timer': timer},
 				success: function (data) {
@@ -125,10 +125,10 @@ var Hanoy = function(el, cnt){
 	init();
 };
 
-$('#hanoy-start').on('click',function(){
+$('#hanoi-start').on('click',function(){
 	var crcl_cnt = $('#inputblocks-Count').val();
 
-	hanoy = new Hanoy($('[data-type=Hanoy]'), crcl_cnt);
+	hanoi = new Hanoi($('[data-type=Hanoi]'), crcl_cnt);
 });
 
-$('#hanoy-start').trigger('click');
+$('#hanoi-start').trigger('click');

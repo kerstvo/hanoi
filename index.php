@@ -13,7 +13,7 @@
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.min.css" />
 		<!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.0/jquery.mobile.min.css" /> -->
-		<link rel="stylesheet" href="hanoy.css">
+		<link rel="stylesheet" href="hanoi.css">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -25,7 +25,7 @@
 			<p><a target="_blank" href="http://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BD%D0%BE%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F">Ханойская башня</a></p>
 		</div>
 
-		<table class="table" data-type="Hanoy">
+		<table class="table" data-type="Hanoi">
 			<tbody>
 				<tr>
 					<td class="tower" data-type="tower">
@@ -79,7 +79,7 @@
 								</select>
 							</div>
 							<div class="col-xs-12 col-sm-4">
-								<button type="button" class="btn btn-default btn-success" id="hanoy-start">Начать заново</button>
+								<button type="button" class="btn btn-default btn-success" id="hanoi-start">Начать заново</button>
 							</div>
 						</div>
 						</div>
@@ -97,6 +97,6 @@
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.0/jquery.mobile.min.js"></script> -->
-		<script type="text/javascript" src="hanoy.js"></script>
+		<script type="text/javascript" src="hanoi.js"></script>
     </body>
 </html>
