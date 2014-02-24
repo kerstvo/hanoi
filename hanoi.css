@@ -8,6 +8,10 @@
 	height: 300px;
 	vertical-align: bottom !important;
 	padding: 10px 10px 0 10px !important;
+	background-image: url('1.gif');
+	background-position: 50%;
+	background-size: 2%;
+	background-repeat: repeat-y;
 }
 
 /*.blocks-container{
@@ -39,17 +43,6 @@
 	border-radius: 5px;
 	margin: 1px auto;
 	box-shadow: 6px 2px 6px #111;
-}
-
-.stick{
-	width: 4%;
-	background-color: #333;
-	height: 100%;
-	min-height: 100px;
-	position: absolute;
-	left: 48%;
-	top: 0;
-	z-index: -1;
 }
 
 .controls{

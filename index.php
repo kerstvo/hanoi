@@ -32,24 +32,18 @@
 			<tbody>
 				<tr>
 					<td class="tower" data-type="tower">
-						<div class="stick"></div>
-
 						<table class="column-wrapper">
 							<tbody data-type="column" data-num="1">
 							</tbody>
 						</table>
 					</td>
 					<td class="tower" data-type="tower">
-						<div class="stick"></div>
-
 						<table class="column-wrapper">
 							<tbody data-type="column" data-num="2">
 							</tbody>
 						</table>
 					</td>
 					<td class="tower" data-type="tower">
-						<div class="stick"></div>
-
 						<table class="column-wrapper">
 							<tbody data-type="column" data-num="3">
 							</tbody>

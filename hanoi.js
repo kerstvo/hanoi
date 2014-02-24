@@ -1,3 +1,5 @@
+var timer_interval = 0;
+
 var Hanoi = function(el, cnt){
 	var columns_selector		= '[data-type="column"]', 
 		block_selector			= '[data-type="block"]',
@@ -9,7 +11,6 @@ var Hanoi = function(el, cnt){
 		counter					= 0,
 		timer_el				= el.find('[data-type="timer"]'),
 		timer					= 0,
-		timer_interval			= 0,
 		min_width				= 20,
 		from					= 0,
 		to						= 0,
@@ -21,6 +22,7 @@ var Hanoi = function(el, cnt){
 		counter_el.text(counter);
 		timer_el.text(timer);
 		clearInterval(timer_interval);
+		timer_interval = 0;
 		victory_el.hide();
 
 		columns.sortable({
@@ -113,7 +115,7 @@ var Hanoi = function(el, cnt){
 		// columns.css('min-height',(block_h)+'px');
 
 		for(var i = min_width; i <= 101; i += delta){
-			generated_blocks += '<tr class="block-wrapper" data-type="block" data-width="'+i+'" data-sortable="false" style="height:'+block_h+'px;"><td class="block" style="width: '+i+'%;">&nbsp;</td></tr>';
+			generated_blocks += '<tr class="block-wrapper" data-type="block" data-width="'+i+'" data-sortable="false" style="height:'+block_h+'px;"><td class="block" style="width: '+i+'%;height:'+block_h+'px;"></td></tr>';
 		}
 
 		columns.html("<tr><td></td></tr>");
