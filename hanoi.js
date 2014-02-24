@@ -5,6 +5,7 @@ var Hanoi = function(el, cnt){
 		tower_h					= el.find('[data-type="tower"]').height(),
 		victory_el				= el.find('[data-type="victory"]'),
 		counter_el				= el.find('[data-type="counter"]'),
+		share_el				= el.find('[data-type="share"]'),
 		counter					= 0,
 		timer_el				= el.find('[data-type="timer"]'),
 		timer					= 0,
@@ -61,10 +62,23 @@ var Hanoi = function(el, cnt){
 				}
 				// проверим на победу, если в одной башне все собрались - умница
 				var blocks_count = ui.item.siblings().filter(block_selector).length;
-				if ( blocks_count === count-1 ){
+				if ( blocks_count === count-1 && to != 1 ){
 					clearInterval(timer_interval);
 					// columns.sortable('disable');
 					victory_el.show();
+					new Ya.share({
+						element: 'ya_share',
+						theme: 'counter',
+						elementStyle: {
+							'type': 'icon',
+							'linkIcon': true,
+							'quickServices': ['vkontakte', 'facebook', 'twitter', 'odnoklassniki', 'gplus'],
+						},
+						link: window.location.href,
+						title: 'Онлайн игра Ханойские башни',
+						description: "Блоков: " + count + ",  шагов: " + counter + "; секунд: " + timer,
+						image: window.location.href + "hanoi.png",
+					});
 					// запишем в файл победу!!
 					save(counter,0,0,timer);
 				}

@@ -7,7 +7,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <meta property="og:image" content="http://hamoi.maramygin.ru/hanoi.png">
+		<meta property="og:image:type" content="image/png">
+
+        <title>Онлайн игра Ханойские башни</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +65,8 @@
 					</td>
 					<td colspan="2">
 						<div class="alert alert-success victory" data-type="victory">
-							ВИКТОРИЯ!
+							<p>ВИКТОРИЯ!</p>
+							<div data-type="share" id="ya_share"></div> 
 						</div>
 						<div class="row text-center">
 						<div class="form-group controls">
@@ -97,6 +101,7 @@
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.0/jquery.mobile.min.js"></script> -->
+		<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
 		<script type="text/javascript" src="hanoi.js"></script>
     </body>
 </html>
