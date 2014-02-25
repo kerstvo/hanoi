@@ -74,17 +74,17 @@ var Hanoi = function(el, cnt){
 						elementStyle: {
 							'type': 'icon',
 							'linkIcon': true,
-							'quickServices': ['vkontakte', 'facebook', 'twitter', 'odnoklassniki', 'gplus'],
+							'quickServices': ['vkontakte', 'facebook', 'twitter', 'odnoklassniki', 'gplus']
 						},
 						link: window.location.href,
 						title: 'Онлайн игра Ханойские башни',
 						description: "Блоков: " + count + ",  шагов: " + counter + "; секунд: " + timer,
-						image: window.location.href + "hanoi.png",
+						image: window.location.href + "hanoi.png"
 					});
 					// запишем в файл победу!!
 					save(counter,0,0,timer);
 				}
-			},
+			}
 		});
 	};
 
@@ -112,13 +112,11 @@ var Hanoi = function(el, cnt){
 			block_h			= tower_h / count,
 			generated_blocks	= "";
 
-		// columns.css('min-height',(block_h)+'px');
-
 		for(var i = min_width; i <= 101; i += delta){
-			generated_blocks += '<tr class="block-wrapper" data-type="block" data-width="'+i+'" data-sortable="false" style="height:'+block_h+'px;"><td class="block" style="width: '+i+'%;height:'+block_h+'px;"></td></tr>';
+			generated_blocks += '<tr class="block-wrapper" data-type="block" data-width="'+i+'" data-sortable="false" style="height:'+block_h+'px;"><td style="width:inherit;"><div class="block" style="width: '+i+'%;height:'+block_h+'px;">&nbsp;</div></td></tr>';
 		}
 
-		columns.html("<tr><td></td></tr>");
+		columns.html('<tr><td style="display:none;">&nbsp;</td></tr>');
 
 		// начинаем с певой башни
 		columns.first().append(generated_blocks);
