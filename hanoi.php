@@ -14,6 +14,7 @@ if (isset($_POST['from']) && isset($_POST['to']) && isset($_COOKIE['PHPSESSID'])
 	}
 	if ($to == 0 && $from == 0){ // если так, то победа!
 		fwrite($f, PHP_EOL."======== VICTORY ($counter moves : $timer sec) ========".PHP_EOL);
+		echo json_encode(['file'=>'/games/game-'.$_COOKIE['PHPSESSID'].'.txt']);
 	}
 	else{ // просто ход
 		fwrite($f, PHP_EOL."#$counter ($timer): $from -> $to");

@@ -8,6 +8,7 @@ var Hanoi = function(el, cnt){
 		victory_el				= el.find('[data-type="victory"]'),
 		counter_el				= el.find('[data-type="counter"]'),
 		share_el				= el.find('[data-type="share"]'),
+		file_link_el			= el.find('[data-type="file-link"]'),
 		counter					= 0,
 		timer_el				= el.find('[data-type="timer"]'),
 		timer					= 0,
@@ -100,7 +101,10 @@ var Hanoi = function(el, cnt){
 				type: 'post',
 				data: {'counter':counter, 'from': from, 'to': to, 'timer': timer},
 				success: function (data) {
-					
+					data = $.parseJSON(data);
+					if (data.file){
+						file_link_el.attr("href",data.file);
+					}
 				}
 			});
 		// console.log(from+' -> '+to);

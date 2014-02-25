@@ -63,7 +63,7 @@
 							</td>
 							<td colspan="2">
 								<div class="alert alert-success victory" data-type="victory">
-									<p>ВИКТОРИЯ!</p>
+									<p>ВИКТОРИЯ! (<a href="" target="_blank" data-type="file-link">история ходов</a>)</p>
 									<div data-type="share" id="ya_share"></div> 
 								</div>
 								<div class="row text-center">
