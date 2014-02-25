@@ -116,7 +116,7 @@ var Hanoi = function(el, cnt){
 			generated_blocks += '<tr class="block-wrapper" data-type="block" data-width="'+i+'" data-sortable="false" style="height:'+block_h+'px;"><td style="width:inherit;"><div class="block" style="width: '+i+'%;height:'+block_h+'px;">&nbsp;</div></td></tr>';
 		}
 
-		columns.html('<tr><td style="display:none;">&nbsp;</td></tr>');
+		columns.html('<tr><td>&nbsp;</td></tr>');
 
 		// начинаем с певой башни
 		columns.first().append(generated_blocks);
