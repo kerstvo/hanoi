@@ -94,6 +94,9 @@
 				</table>
 
 			</div>
+        	<div class="row">
+        		<div class="well well-sm"><a href="https://bitbucket.org/cslstudio/hanoi">bitbucket.org</a> | <a href="https://github.com/kerstvo/hanoi">github.com</a></div>
+        	</div>
         </div>        
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script> -->
